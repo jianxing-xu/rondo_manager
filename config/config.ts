@@ -9,6 +9,10 @@ import routes from './routes';
 const { REACT_APP_ENV } = process.env;
 
 export default defineConfig({
+  outputPath: "rondo-manage",
+  base: "rondo-manage",
+  publicPath: "/rondo-manage/",
+  history: { type: "hash"},
   define: {
     "process.env.BASE_API": "http://106.15.137.156:8899/api"
   },

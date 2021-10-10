@@ -124,16 +124,36 @@ export const reqUpdateConf = (params: Conf) => {
 }
 
 /** Dashboard API */
+// 下一首
 export const reqPlayNext = (roomId: number) => {
   return request("/song/next/" + roomId);
 }
+// 清除消息
 export const reqClearMsg = (roomId: number) => {
   return request("/message/clear/" + roomId, {
     method: "DELETE"
   });
 }
+// 获取在线列表
 export const reqOnlineList = (roomId: number) => {
   return request(`/user/online/${roomId}/yes`);
+}
+// 搜索歌曲
+export const reqSearchSong = (keyword: string) => {
+  return request("/song/search", {
+    params: { keyword }
+  });
+}
+// 点歌
+export const reqAddSong = (data: { roomId: string, mid: string, atUser?: string }) => {
+  return request("/song/add", {
+    method: "POST",
+    data
+  })
+}
+// queue songs
+export const reqQueueSongs = (roomId: string) => {
+  return request("/song/queue/" + roomId)
 }
 
 /** 上传图片 { file } */
