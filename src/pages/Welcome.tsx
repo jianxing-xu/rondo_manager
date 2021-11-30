@@ -162,7 +162,7 @@ export default (): React.ReactNode => {
                 <Button size="small" onClick={() => clearMsg(currentRoom?.room_id)}>
                   清除消息
                 </Button>
-                <Button size="small" onClick={() => showAddSong(currentRoom?.room_id)}>
+                <Button size="small" onClick={() => showAddSong()}>
                   点歌
                 </Button>
                 <Button size="small" onClick={() => showOnlineList(currentRoom?.room_id)}>
